@@ -84,9 +84,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary:
-    <<: *default
-    database: blog_production
+  <<: *default
+  username: blog
+  password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
+  database: blog_production
   cache:
     username: blog
     password: <%= ENV["BLOG_DATABASE_PASSWORD"] %>
